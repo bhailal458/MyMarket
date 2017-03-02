@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 
+import java.util.ArrayList;
+
 /**
  * Created by Sony on 28-02-2017.
  */
@@ -96,19 +98,41 @@ public class PSubCategoryFragment extends Fragment {
         View view = inflater.inflate(R.layout.product_category_grid,container,false);
         gridview = (GridView)view.findViewById(R.id.gridview);
         retrivePosition = getArguments().getInt("myProductPos");
+
         if (retrivePosition == img[0]) {
-            PSubCategoryAdapter adapter1 = new PSubCategoryAdapter(getActivity(), imgveg, webveg);
-            gridview.setAdapter(adapter1);
+
+            ArrayList<PojoVeg> myveg = new ArrayList<>();
+            for (int i = 0; i <imgveg.length ; i++) {
+                PojoVeg pojoveg = new PojoVeg();
+                pojoveg.setImgveg(imgveg[i]);
+                myveg.add(pojoveg);
+            }
+            PSubVegAdapter adapterveg = new PSubVegAdapter(getActivity(),myveg, webveg);
+            gridview.setAdapter(adapterveg);
         }
 
         if(retrivePosition ==img[1]){
-            PSubCategoryAdapter adapter1 = new PSubCategoryAdapter(getActivity(), imgfruits, webfruits);
-            gridview.setAdapter(adapter1);
+
+            ArrayList<PojoFruits> myfruits = new ArrayList<>();
+            for (int i = 0; i <imgfruits.length ; i++) {
+                PojoFruits pojofruits = new PojoFruits();
+                pojofruits.setImgfruits(imgfruits[i]);
+                myfruits.add(pojofruits);
+            }
+            PSubFruitsAdapter adapterfruits = new PSubFruitsAdapter(getActivity(),myfruits, webfruits);
+            gridview.setAdapter(adapterfruits);
 
         }
+
         if(retrivePosition == img[2]){
-            PSubCategoryAdapter adapter1 = new PSubCategoryAdapter(getActivity(), imggrains, webgrains);
-            gridview.setAdapter(adapter1);
+            ArrayList<PojoGrains> mygrains = new ArrayList<>();
+            for (int i = 0; i <imggrains.length ; i++) {
+                PojoGrains pojoGrains = new PojoGrains();
+                pojoGrains.setImggrains(imggrains[i]);
+                mygrains.add(pojoGrains);
+            }
+            PSubGrainsAdapter adaptergrains = new PSubGrainsAdapter(getActivity(),mygrains, webgrains);
+            gridview.setAdapter(adaptergrains);
 
         }
         return view;

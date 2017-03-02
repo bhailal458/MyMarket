@@ -97,8 +97,8 @@ public class OneProductFragment extends Fragment{
 
         int retrivePosition = getArguments().getInt("myProductPos");
 
-            PSubCategoryAdapter adapter1 = new PSubCategoryAdapter(getActivity(), imgveg, webveg);
-            myList.setAdapter(adapter1);
+//            PSubVegAdapter adapter1 = new PSubVegAdapter(getActivity(), imgveg, webveg, context1, inflater, myvegpojo, webveg1);
+//            myList.setAdapter(adapter1);
 
         return view;
     }
