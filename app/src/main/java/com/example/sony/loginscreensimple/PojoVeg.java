@@ -17,7 +17,7 @@ public class PojoVeg {
         this.imgveg = imgveg;
     }
 
-    public String getWebveg(String s) {
+    public String getWebveg() {
         return webveg;
     }
 

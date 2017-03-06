@@ -46,7 +46,7 @@ public class PSubCategoryFragment extends Fragment {
             "Tomato",
             "Bitter gourd",
             "Cabbage",
-            "Cerrot",
+            "Carrot",
             "Lady Finger",
             "Peas",
     } ;
@@ -105,9 +105,10 @@ public class PSubCategoryFragment extends Fragment {
             for (int i = 0; i <imgveg.length ; i++) {
                 PojoVeg pojoveg = new PojoVeg();
                 pojoveg.setImgveg(imgveg[i]);
+                pojoveg.setWebveg(webveg[i]);
                 myveg.add(pojoveg);
             }
-            PSubVegAdapter adapterveg = new PSubVegAdapter(getActivity(),myveg, webveg);
+            PSubVegAdapter adapterveg = new PSubVegAdapter(getActivity(),myveg);
             gridview.setAdapter(adapterveg);
         }
 
@@ -117,9 +118,10 @@ public class PSubCategoryFragment extends Fragment {
             for (int i = 0; i <imgfruits.length ; i++) {
                 PojoFruits pojofruits = new PojoFruits();
                 pojofruits.setImgfruits(imgfruits[i]);
+                pojofruits.setWebfruits(webfruits[i]);
                 myfruits.add(pojofruits);
             }
-            PSubFruitsAdapter adapterfruits = new PSubFruitsAdapter(getActivity(),myfruits, webfruits);
+            PSubFruitsAdapter adapterfruits = new PSubFruitsAdapter(getActivity(),myfruits);
             gridview.setAdapter(adapterfruits);
 
         }
@@ -129,9 +131,10 @@ public class PSubCategoryFragment extends Fragment {
             for (int i = 0; i <imggrains.length ; i++) {
                 PojoGrains pojoGrains = new PojoGrains();
                 pojoGrains.setImggrains(imggrains[i]);
+                pojoGrains.setWebgrains(webgrains[i]);
                 mygrains.add(pojoGrains);
             }
-            PSubGrainsAdapter adaptergrains = new PSubGrainsAdapter(getActivity(),mygrains, webgrains);
+            PSubGrainsAdapter adaptergrains = new PSubGrainsAdapter(getActivity(),mygrains);
             gridview.setAdapter(adaptergrains);
 
         }

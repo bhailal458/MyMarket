@@ -1,12 +1,17 @@
 package com.example.sony.loginscreensimple;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 /**
  * Created by Sony on 28-02-2017.
@@ -14,7 +19,9 @@ import android.widget.ListView;
 
 public class OneProductFragment extends Fragment{
 
-    ListView myList;
+    ImageView myImage;
+    TextView txtone;
+    Context context;
 
 
     private int img[] = {
@@ -43,7 +50,7 @@ public class OneProductFragment extends Fragment{
             "Tomato",
             "Bitter gourd",
             "Cabbage",
-            "Cerrot",
+            "Carrot",
             "Lady Finger",
             "Peas",
     } ;
@@ -67,7 +74,6 @@ public class OneProductFragment extends Fragment{
             "Banana",
             "Watermelon",
     } ;
-
     private int imggrains[] = {
             R.drawable.gchickpeas,
             R.drawable.gcorn,
@@ -93,13 +99,27 @@ public class OneProductFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.one_product_list,container,false);
 
-        myList = (ListView)view.findViewById(R.id.one_product_display_list);
-
+        txtone = (TextView)view.findViewById(R.id.oneTxt);
+        myImage = (ImageView)view.findViewById(R.id.oneImage);
         int retrivePosition = getArguments().getInt("myProductPos");
+        String myString = getArguments().getString("myString");
+
 
 //            PSubVegAdapter adapter1 = new PSubVegAdapter(getActivity(), imgveg, webveg, context1, inflater, myvegpojo, webveg1);
-//            myList.setAdapter(adapter1);
+        myImage.setImageResource(retrivePosition);
+        txtone.setText(myString);
 
+        Picasso.with(context).load(retrivePosition)
+                .placeholder(R.drawable.plcaholderimg)
+                .resize(500,500).into(myImage);
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
         return view;
     }
 }

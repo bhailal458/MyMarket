@@ -2,9 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/add_cart"
         android:orderInCategory="100"
-        android:title="action_settings"
+        android:title="add_cart"
         android:icon="@drawable/cart"
         app:showAsAction="always" />
 </menu>
+    <!--android:actionLayout="@layout/badge"-->

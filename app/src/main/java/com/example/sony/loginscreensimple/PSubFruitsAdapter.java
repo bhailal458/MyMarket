@@ -1,6 +1,10 @@
 package com.example.sony.loginscreensimple;
 
+import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,14 +25,14 @@ public class PSubFruitsAdapter extends BaseAdapter {
     private Context context1;
     private LayoutInflater inflater;
     private ArrayList<PojoFruits> myfruitpojo;
-    private final String[] webfruits;
+    //private final String[] webfruits;
     private OneProductFragment oneproductfrag;
 
 
-    public PSubFruitsAdapter(Context context1, ArrayList<PojoFruits> myfruitpojo, String[] webfruits) {
+    public PSubFruitsAdapter(Context context1, ArrayList<PojoFruits> myfruitpojo) {
         this.context1 = context1;
         this.myfruitpojo = myfruitpojo;
-        this.webfruits = webfruits;
+        //this.webfruits = webfruits;
     }
 
 
@@ -58,12 +62,37 @@ public class PSubFruitsAdapter extends BaseAdapter {
         TextView txtTitle = (TextView) view.findViewById(R.id.gridText);
         ImageView imageView = (ImageView) view.findViewById(R.id.gridimage);
 
-        PojoFruits pf = myfruitpojo.get(position);
+        final PojoFruits pf = myfruitpojo.get(position);
 
         imageView.setImageResource(pf.getImgfruits());
-        txtTitle.setText(webfruits[position]);
+        txtTitle.setText(pf.getWebfruits());
 
         Picasso.with(context1).load(pf.getImgfruits()).resize(100,100).into(imageView);
+
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                oneproductfrag = new OneProductFragment();
+                Bundle bundle = new Bundle();
+                int myPos = pf.getImgfruits();
+                String myString = pf.getWebfruits();
+
+                bundle.putInt("myProductPos",myPos);
+                bundle.putString("myString",myString);
+
+                oneproductfrag.setArguments(bundle);
+
+                Activity activityGrid = (Activity) context1;
+
+                FragmentManager fragmentManager = activityGrid.getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.L_Layout,oneproductfrag);
+                fragmentTransaction.addToBackStack("");
+                fragmentTransaction.commit();
+            }
+        });
 
         return view;
     }

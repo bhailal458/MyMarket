@@ -25,13 +25,13 @@ public class PSubVegAdapter extends BaseAdapter {
     private Context context1;
     private LayoutInflater inflater;
     private ArrayList<PojoVeg> myvegpojo;
-    private final String[] webveg;
+  //  private final String[] webveg;
     private OneProductFragment oneproductfrag;
 
-    public PSubVegAdapter(Context context1, ArrayList<PojoVeg> myvegpojo, String[] webveg1) {
+    public PSubVegAdapter(Context context1, ArrayList<PojoVeg> myvegpojo) {
         this.context1 = context1;
         this.myvegpojo = myvegpojo;
-        this.webveg = webveg1;
+       // this.webveg = webveg1;
     }
 
 
@@ -51,7 +51,7 @@ public class PSubVegAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View view, ViewGroup parent) {
+    public View getView(final int position, View view, ViewGroup parent) {
 
         if(view ==  null) {
            // LayoutInflater inflater = context1.getLayoutInflater();
@@ -61,49 +61,37 @@ public class PSubVegAdapter extends BaseAdapter {
         TextView txtTitle = (TextView) view.findViewById(R.id.gridText);
         ImageView imageView = (ImageView) view.findViewById(R.id.gridimage);
 
-        PojoVeg Vv = myvegpojo.get(position);
+        final PojoVeg Vv = myvegpojo.get(position);
 
         imageView.setImageResource(Vv.getImgveg());
-        txtTitle.setText(webveg[position]);
+        txtTitle.setText(Vv.getWebveg());
 
 
        Picasso.with(context1).load(Vv.getImgveg()).resize(100,100).into(imageView);
 
 
-//        view1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                oneproductfrag = new OneProductFragment();
-//
-//                Bundle bundle = new Bundle();
-//                int myPos = img[position];
-//
-//                if(myPos == img[0]){
-//
-//
-//                    bundle.putInt("myProductPos",myPos);
-//                    oneproductfrag.setArguments(bundle);
-//                }
-//
-//                else if(myPos == img[1]){
-//
-//                    bundle.putInt("myProductPos",myPos);
-//                    oneproductfrag.setArguments(bundle);
-//                }
-//                else if(myPos == img[2]){
-//                    bundle.putInt("myProductPos",myPos);
-//                    oneproductfrag.setArguments(bundle);
-//                }
-//                Activity activityGrid = (Activity) context1;
-//
-//                FragmentManager fragmentManager = activityGrid.getFragmentManager();
-//                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//                fragmentTransaction.replace(R.id.L_Layout,oneproductfrag);
-//                fragmentTransaction.addToBackStack("");
-//                fragmentTransaction.commit();
-//            }
-//        });
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                oneproductfrag = new OneProductFragment();
+                Bundle bundle = new Bundle();
+                int myPos = Vv.getImgveg();
+                String myString = Vv.getWebveg();
+                bundle.putInt("myProductPos",myPos);
+                bundle.putString("myString",myString);
+                oneproductfrag.setArguments(bundle);
+
+                Activity activityGrid = (Activity) context1;
+
+                FragmentManager fragmentManager = activityGrid.getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.L_Layout,oneproductfrag);
+                fragmentTransaction.addToBackStack("");
+                fragmentTransaction.commit();
+            }
+        });
+
         return view;
     }
 }
