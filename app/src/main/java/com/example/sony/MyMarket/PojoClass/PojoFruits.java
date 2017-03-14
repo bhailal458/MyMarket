@@ -1,4 +1,4 @@
-package com.example.sony.loginscreensimple;
+package com.example.sony.MyMarket.PojoClass;
 
 /**
  * Created by Sony on 01-03-2017.

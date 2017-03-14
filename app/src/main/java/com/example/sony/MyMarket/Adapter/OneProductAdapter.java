@@ -1,9 +1,6 @@
-package com.example.sony.loginscreensimple;
+package com.example.sony.MyMarket.Adapter;
 
 import android.app.Activity;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.sony.MyMarket.Fragment.PSubCategoryFragment;
+import com.example.sony.MyMarket.R;
 import com.squareup.picasso.Picasso;
 
 /**

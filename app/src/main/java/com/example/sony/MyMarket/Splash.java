@@ -1,4 +1,4 @@
-package com.example.sony.loginscreensimple;
+package com.example.sony.MyMarket;
 
 import android.app.Activity;
 import android.content.Intent;

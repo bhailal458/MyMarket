@@ -1,4 +1,4 @@
-package com.example.sony.loginscreensimple;
+package com.example.sony.MyMarket.Adapter;
 
 import android.app.Activity;
 import android.app.FragmentManager;
@@ -8,41 +8,45 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.sony.MyMarket.Fragment.OneProductFragment;
+import com.example.sony.MyMarket.PojoClass.PojoFruits;
+import com.example.sony.MyMarket.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 /**
- * Created by Sony on 01-03-2017.
+ * Created by Sony on 02-03-2017.
  */
 
-public class PSubVegAdapter extends BaseAdapter {
+public class PSubFruitsAdapter extends BaseAdapter {
 
     private Context context1;
     private LayoutInflater inflater;
-    private ArrayList<PojoVeg> myvegpojo;
-  //  private final String[] webveg;
+    private ArrayList<PojoFruits> myfruitpojo;
+    //private final String[] webfruits;
     private OneProductFragment oneproductfrag;
 
-    public PSubVegAdapter(Context context1, ArrayList<PojoVeg> myvegpojo) {
+
+    public PSubFruitsAdapter(Context context1, ArrayList<PojoFruits> myfruitpojo) {
         this.context1 = context1;
-        this.myvegpojo = myvegpojo;
-       // this.webveg = webveg1;
+        this.myfruitpojo = myfruitpojo;
+        //this.webfruits = webfruits;
     }
 
 
     @Override
     public int getCount() {
-        return myvegpojo.size();
+        return myfruitpojo.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return myvegpojo.get(position);
+        return myfruitpojo.get(position);
     }
 
     @Override
@@ -51,23 +55,22 @@ public class PSubVegAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(final int position, View view, ViewGroup parent) {
+    public View getView(int position, View view, ViewGroup parent) {
 
         if(view ==  null) {
-           // LayoutInflater inflater = context1.getLayoutInflater();
+            // LayoutInflater inflater = context1.getLayoutInflater();
             inflater = (LayoutInflater)context1.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.grid_row, parent, false);
         }
         TextView txtTitle = (TextView) view.findViewById(R.id.gridText);
         ImageView imageView = (ImageView) view.findViewById(R.id.gridimage);
 
-        final PojoVeg Vv = myvegpojo.get(position);
+        final PojoFruits pf = myfruitpojo.get(position);
 
-        imageView.setImageResource(Vv.getImgveg());
-        txtTitle.setText(Vv.getWebveg());
+        imageView.setImageResource(pf.getImgfruits());
+        txtTitle.setText(pf.getWebfruits());
 
-
-       Picasso.with(context1).load(Vv.getImgveg()).resize(100,100).into(imageView);
+        Picasso.with(context1).load(pf.getImgfruits()).resize(100,100).into(imageView);
 
 
         view.setOnClickListener(new View.OnClickListener() {
@@ -76,10 +79,12 @@ public class PSubVegAdapter extends BaseAdapter {
 
                 oneproductfrag = new OneProductFragment();
                 Bundle bundle = new Bundle();
-                int myPos = Vv.getImgveg();
-                String myString = Vv.getWebveg();
+                int myPos = pf.getImgfruits();
+                String myString = pf.getWebfruits();
+
                 bundle.putInt("myProductPos",myPos);
                 bundle.putString("myString",myString);
+
                 oneproductfrag.setArguments(bundle);
 
                 Activity activityGrid = (Activity) context1;

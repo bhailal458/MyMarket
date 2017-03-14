@@ -1,23 +1,19 @@
-package com.example.sony.loginscreensimple;
+package com.example.sony.MyMarket.Adapter;
 
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.sony.MyMarket.Fragment.PSubCategoryFragment;
+import com.example.sony.MyMarket.R;
 import com.squareup.picasso.Picasso;
-
-import java.util.ArrayList;
 
 /**
  * Created by Sony on 20-02-2017.

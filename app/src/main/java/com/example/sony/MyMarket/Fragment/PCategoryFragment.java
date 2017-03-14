@@ -1,4 +1,4 @@
-package com.example.sony.loginscreensimple;
+package com.example.sony.MyMarket.Fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+
+import com.example.sony.MyMarket.Adapter.PCategoryAdapter;
+import com.example.sony.MyMarket.R;
 
 /**
  * Created by Sony on 28-02-2017.

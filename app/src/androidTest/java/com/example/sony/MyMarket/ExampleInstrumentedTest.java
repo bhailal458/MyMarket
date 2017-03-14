@@ -1,4 +1,4 @@
-package com.example.sony.loginscreensimple;
+package com.example.sony.MyMarket;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

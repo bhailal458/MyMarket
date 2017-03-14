@@ -1,4 +1,4 @@
-package com.example.sony.loginscreensimple;
+package com.example.sony.MyMarket.Fragment;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -8,9 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.sony.MyMarket.R;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -110,6 +110,10 @@ public class OneProductFragment extends Fragment{
         txtone.setText(myString);
 
         Picasso.with(context).load(retrivePosition)
+
+
+
+
                 .placeholder(R.drawable.plcaholderimg)
                 .resize(500,500).into(myImage);
 

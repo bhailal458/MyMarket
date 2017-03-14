@@ -27,6 +27,11 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.1.0'
     compile 'com.android.support:design:25.1.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
+
+    compile 'com.squareup.okhttp:okhttp:2.0.0'
+    compile 'com.github.ivbaranov:materiallettericon:0.2.2'
+//    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
+
 //    compile 'com.google.android.gms:play-services:10.2.0'
 //    comiple 'com.google.android.gms:play-services-maps:10.2.0'
 //    compile 'com.google.android.gms:play-services-places:10.2.0'

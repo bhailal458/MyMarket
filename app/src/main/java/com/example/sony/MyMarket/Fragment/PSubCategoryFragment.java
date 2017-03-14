@@ -1,4 +1,4 @@
-package com.example.sony.loginscreensimple;
+package com.example.sony.MyMarket.Fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -7,6 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+
+import com.example.sony.MyMarket.Adapter.PSubFruitsAdapter;
+import com.example.sony.MyMarket.Adapter.PSubGrainsAdapter;
+import com.example.sony.MyMarket.Adapter.PSubVegAdapter;
+import com.example.sony.MyMarket.PojoClass.PojoFruits;
+import com.example.sony.MyMarket.PojoClass.PojoGrains;
+import com.example.sony.MyMarket.PojoClass.PojoVeg;
+import com.example.sony.MyMarket.R;
 
 import java.util.ArrayList;
 
