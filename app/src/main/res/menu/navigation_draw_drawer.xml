@@ -18,8 +18,8 @@
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/share"
-                android:title="Share" />
+                android:id="@+id/contactUs"
+                android:title="Contact US" />
             <item
                 android:id="@+id/feedback"
                 android:title="Feedback" />

@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.sony.MyMarket.Fragment.ContactUsFragment;
 import com.example.sony.MyMarket.Fragment.PCategoryFragment;
 
 public class NavigationDraw extends AppCompatActivity
@@ -105,7 +106,16 @@ public class NavigationDraw extends AppCompatActivity
 
         } else if (id == R.id.myorder) {
 
-        } else if (id == R.id.share) {
+        } else if (id == R.id.contactUs) {
+
+            ContactUsFragment contactUsFragment = new ContactUsFragment();
+
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            transaction.replace(R.id.L_Layout,contactUsFragment);
+            transaction.commit();
+
+
 
         } else if (id == R.id.feedback) {
 

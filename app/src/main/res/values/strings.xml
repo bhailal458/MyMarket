@@ -5,5 +5,15 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <string name="email_developer_">Email Developer:</string>
+    <string name="personal_website_">Personal Website :</string>
+    <string name="site_hitesh">www.bhailalchauhan.com</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="mob_num">8347337366</string>
+    <string name="lab_locations">Locations</string>
+    <string name="pune">Ahmedabad</string>
+    <string name="address_value">402, Vnurture Technologies, Navarangpura,Ahmedabad</string>
+
+
 
 </resources>
